@@ -13,8 +13,12 @@ public class Gun : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
-        
+
+    }
+    protected void Fire()
+    {
+        GetComponentInChildren<Animator>().Play("Fire");
     }
 }
