@@ -13,7 +13,6 @@ public class Ammo : MonoBehaviour
     [SerializeField]
     private int assaultRifleAmmo = 50;
     public Dictionary<string, int> tagToAmmo;
-
     void Awake()
     {
         tagToAmmo = new Dictionary<string, int>
@@ -23,7 +22,6 @@ public class Ammo : MonoBehaviour
             { Constants.AssaultRifle , assaultRifleAmmo },
         };
     }
-
     public void AddAmmo(string tag, int ammo)
     {
         if (!tagToAmmo.ContainsKey(tag))
@@ -32,7 +30,6 @@ public class Ammo : MonoBehaviour
         }
         tagToAmmo[tag] += ammo;
     }
-
     // Returns true if gun has ammo
     public bool HasAmmo(string tag)
     {
@@ -42,7 +39,6 @@ public class Ammo : MonoBehaviour
         }
         return tagToAmmo[tag] > 0;
     }
-
     public int GetAmmo(string tag)
     {
         if (!tagToAmmo.ContainsKey(tag))
@@ -51,26 +47,12 @@ public class Ammo : MonoBehaviour
         }
         return tagToAmmo[tag];
     }
-
     public void ConsumeAmmo(string tag)
     {
         if (!tagToAmmo.ContainsKey(tag))
         {
             Debug.LogError("Unrecognized gun type passed:" + tag);
         }
-        
         tagToAmmo[tag]--;
-    }
-
-        // Start is called before the first frame update
-        void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

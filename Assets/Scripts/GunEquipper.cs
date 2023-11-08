@@ -6,19 +6,16 @@ public class GunEquipper : MonoBehaviour
 {
     [SerializeField]
     GameUI gameUI;
-
     public static string activeWeaponType;
     public GameObject pistol;
     public GameObject assaultRifle;
     public GameObject shotgun;
     GameObject activeGun;
-    // Start is called before the first frame update
-    void Start()
+    void Start ()
     {
         activeWeaponType = Constants.Pistol;
         activeGun = pistol;
     }
-
     private void loadWeapon(GameObject weapon)
     {
         pistol.SetActive(false);
@@ -27,9 +24,7 @@ public class GunEquipper : MonoBehaviour
         weapon.SetActive(true);
         activeGun = weapon;
     }
-
-    // Update is called once per frame
-    void Update()
+    void Update ()
     {
         if (Input.GetKeyDown("1"))
         {
@@ -50,7 +45,6 @@ public class GunEquipper : MonoBehaviour
             gameUI.UpdateReticle();
         }
     }
-
     public GameObject GetActiveWeapon()
     {
         return activeGun;

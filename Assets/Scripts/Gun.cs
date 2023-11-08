@@ -9,16 +9,13 @@ public class Gun : MonoBehaviour
     public AudioClip liveFire;
     public AudioClip dryFire;
     protected float lastFireTime;
-    // Start is called before the first frame update
+
     void Start()
     {
         lastFireTime = Time.time - 10;
     }
-
-    // Update is called once per frame
     protected virtual void Update()
     {
-
     }
     protected void Fire()
     {
@@ -34,4 +31,3 @@ public class Gun : MonoBehaviour
         GetComponentInChildren<Animator>().Play("Fire");
     }
 }
-

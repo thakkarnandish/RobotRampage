@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Constants : MonoBehaviour
+public class Constants
 {
     // Scenes
     public const string SceneBattle = "Battle";
@@ -24,13 +24,13 @@ public class Constants : MonoBehaviour
     // Misc
     public const string Game = "Game";
     public const float CameraDefaultZoom = 60f;
-
+    
     public static readonly int[] AllPickupTypes = new int[5]
     {
-     PickUpPistolAmmo,
-     PickUpAssaultRifleAmmo,
-     PickUpShotgunAmmo,
-     PickUpHealth,
-     PickUpArmor
+        PickUpPistolAmmo,
+        PickUpAssaultRifleAmmo,
+        PickUpShotgunAmmo,
+        PickUpHealth,
+        PickUpArmor
     };
 }

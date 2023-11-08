@@ -13,7 +13,6 @@ public class GameUI : MonoBehaviour
     Sprite blueReticle;
     [SerializeField]
     Image reticle;
-
     public void UpdateReticle()
     {
         switch (GunEquipper.activeWeaponType)
@@ -30,18 +29,5 @@ public class GameUI : MonoBehaviour
             default:
                 return;
         }
-    }
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
