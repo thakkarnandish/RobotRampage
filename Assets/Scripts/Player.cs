@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
     public void TakeDamage(int amount)
     {
@@ -43,6 +43,58 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    // 1
+    private void pickupHealth()
+    {
+        health += 50;
+        if (health > 200)
+        {
+            health = 200;
+        }
+    }
+    private void pickupArmor()
+    {
+        armor += 15;
+    }
+    // 2
+    private void pickupAssaultRifleAmmo()
+    {
+        ammo.AddAmmo(Constants.AssaultRifle, 50);
+    }
+    private void pickupPistolAmmo()
+    {
+        ammo.AddAmmo(Constants.Pistol, 20);
+    }
+    private void pickupShotgunAmmo()
+    {
+        ammo.AddAmmo(Constants.Shotgun, 10);
+    }
+
+    public void PickUpItem(int pickupType)
+    {
+        switch (pickupType)
+        {
+            case Constants.PickUpArmor:
+                pickupArmor();
+                break;
+            case Constants.PickUpHealth:
+                pickupHealth();
+                break;
+            case Constants.PickUpAssaultRifleAmmo:
+                pickupAssaultRifleAmmo();
+                break;
+            case Constants.PickUpPistolAmmo:
+                pickupPistolAmmo();
+                break;
+            case Constants.PickUpShotgunAmmo:
+                pickupShotgunAmmo();
+                break;
+            default:
+                Debug.LogError("Bad pickup type passed" + pickupType);
+                break;
+        }
     }
 }
