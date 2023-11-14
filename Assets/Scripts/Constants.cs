@@ -31,6 +31,6 @@ public class Constants
         PickUpAssaultRifleAmmo,
         PickUpShotgunAmmo,
         PickUpHealth,
-        PickUpArmor
+        PickUpArmor,
     };
 }

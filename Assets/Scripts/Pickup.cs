@@ -22,7 +22,7 @@ public class Pickup : MonoBehaviour
         if (collider.gameObject.GetComponent<Player>() != null && collider.gameObject.tag == "Player")
         {
             collider.gameObject.GetComponent<Player>().PickUpItem(type);
-            //GetComponentInParent<PickupSpawn>().PickupWasPickedUp();
+            GetComponentInParent<PickupSpawn>().PickupWasPickedUp();
             Destroy(gameObject);
         }
     }

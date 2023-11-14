@@ -13,7 +13,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        ammo = GetComponent<Ammo>();
+        gunEquipper = GetComponent<GunEquipper>();
     }
     public void TakeDamage(int amount)
     {
@@ -54,43 +55,49 @@ public class Player : MonoBehaviour
         {
             health = 200;
         }
+        Debug.Log("Health is Picked");
     }
     private void pickupArmor()
     {
         armor += 15;
+        Debug.Log("Armor is Picked");
     }
+
     // 2
     private void pickupAssaultRifleAmmo()
     {
         ammo.AddAmmo(Constants.AssaultRifle, 50);
+        Debug.Log("Assault Ammo is Picked");
     }
     private void pickupPistolAmmo()
     {
         ammo.AddAmmo(Constants.Pistol, 20);
+        Debug.Log("Pistol Ammo is Picked");
     }
     private void pickupShotgunAmmo()
     {
         ammo.AddAmmo(Constants.Shotgun, 10);
+        Debug.Log("Shotgun Ammo is Picked");
     }
 
     public void PickUpItem(int pickupType)
     {
         switch (pickupType)
         {
-            case Constants.PickUpArmor:
-                pickupArmor();
-                break;
-            case Constants.PickUpHealth:
-                pickupHealth();
+            case Constants.PickUpPistolAmmo:
+                pickupPistolAmmo();
                 break;
             case Constants.PickUpAssaultRifleAmmo:
                 pickupAssaultRifleAmmo();
                 break;
-            case Constants.PickUpPistolAmmo:
-                pickupPistolAmmo();
-                break;
             case Constants.PickUpShotgunAmmo:
                 pickupShotgunAmmo();
+                break;
+            case Constants.PickUpHealth:
+                pickupHealth();
+                break;
+            case Constants.PickUpArmor:
+                pickupArmor();
                 break;
             default:
                 Debug.LogError("Bad pickup type passed" + pickupType);
